@@ -35,13 +35,19 @@ function Layout({ children }: { children: React.ReactNode }) {
         
         {/* Logo Section */}
         <div className="p-6 border-b border-slate-700/50">
-          <div className="flex items-center gap-2">
-            <div className="w-10 h-10 bg-gradient-to-br from-purple-500 to-blue-500 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-lg">⚡</span>
-            </div>
+          <div className="flex items-center gap-3">
+            <img 
+              src="/threxa-icon.png" 
+              alt="Threxa" 
+              className="w-10 h-10 object-contain"
+            />
             <div>
-              <div className="font-bold text-white text-lg tracking-wider">THREXA</div>
-              <div className="text-xs text-purple-300 font-medium">Client Portal</div>
+              <div className="font-bold text-white text-lg tracking-wider" style={{ fontFamily: "'Space Mono', monospace" }}>
+                THREXA
+              </div>
+              <div className="text-xs bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent font-semibold">
+                BEYOND LIMITS
+              </div>
             </div>
           </div>
         </div>
@@ -102,7 +108,7 @@ function Layout({ children }: { children: React.ReactNode }) {
                 <Bell size={20} className="text-slate-600" />
                 <span className="absolute top-1 right-1 w-2 h-2 bg-red-500 rounded-full"></span>
               </button>
-              <div className="w-10 h-10 bg-gradient-to-br from-purple-500 to-blue-500 rounded-full flex items-center justify-center text-white font-bold">
+              <div className="w-10 h-10 bg-gradient-to-br from-purple-500 to-blue-500 rounded-full flex items-center justify-center text-white font-bold text-sm">
                 SP
               </div>
             </div>
@@ -154,9 +160,11 @@ export default function App() {
     return (
       <div className="flex items-center justify-center h-screen bg-gradient-to-br from-slate-900 to-slate-800">
         <div className="text-center">
-          <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-blue-500 rounded-lg mx-auto mb-4 flex items-center justify-center">
-            <span className="text-white text-2xl">⚡</span>
-          </div>
+          <img 
+            src="/threxa-icon.png" 
+            alt="Threxa" 
+            className="w-16 h-16 mx-auto mb-4 animate-pulse"
+          />
           <p className="text-white text-lg font-medium">Loading Threxa Portal...</p>
         </div>
       </div>
