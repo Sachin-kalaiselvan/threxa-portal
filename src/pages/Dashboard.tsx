@@ -18,12 +18,6 @@ export function DashboardPage() {
         <p className="text-gray-600 mt-1">{client.name} • {client.tier.charAt(0).toUpperCase() + client.tier.slice(1)} Plan</p>
       </div>
 
-      {/* TEST MESSAGE */}
-      <div className="bg-green-50 border border-green-200 rounded-xl p-6">
-        <p className="text-green-800 font-bold">✅ TEST MODE - Using Hardcoded Data</p>
-        <p className="text-green-700 text-sm mt-2">If you see this message and the cards below, the component works! The API is the issue.</p>
-      </div>
-
       {/* KPI Cards - 4 Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         
