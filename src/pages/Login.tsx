@@ -112,16 +112,6 @@ export function LoginPage() {
               )}
             </button>
           </form>
-
-          {/* Footer */}
-          <div className="mt-8 pt-6 border-t border-slate-700/50 space-y-3">
-            <p className="text-slate-400 text-xs text-center">
-              Demo: <span className="text-slate-300 font-medium">admin@smartpackaging.in</span>
-            </p>
-            <p className="text-slate-500 text-xs text-center">
-              🔒 Enterprise-grade security with Supabase
-            </p>
-          </div>
         </div>
       </div>
     </div>
