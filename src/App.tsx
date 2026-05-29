@@ -85,9 +85,16 @@ export default function App() {
 
   useEffect(() => {
     const checkAuth = async () => {
-      const currentUser = await getCurrentUser()
-      setUser(currentUser)
-      setLoading(false)
+      try {
+        console.log('Checking auth...')
+        const currentUser = await getCurrentUser()
+        console.log('Current user:', currentUser)
+        setUser(currentUser)
+      } catch (error) {
+        console.error('Auth check failed:', error)
+      } finally {
+        setLoading(false)
+      }
     }
 
     checkAuth()
@@ -95,6 +102,7 @@ export default function App() {
     const {
       data: { subscription },
     } = supabase.auth.onAuthStateChange((_event, session) => {
+      console.log('Auth state changed:', session?.user?.email)
       setUser(session?.user || null)
     })
 
