@@ -80,7 +80,7 @@ function Layout({ children }: { children: React.ReactNode }) {
 }
 
 export default function App() {
-  const [user, setUser] = useState(null)
+  const [user, setUser] = useState<any>(null)
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
