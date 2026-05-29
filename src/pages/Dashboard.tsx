@@ -39,6 +39,16 @@ export function DashboardPage() {
     )
   }
 
+  if (!client) {
+    return (
+      <div className="flex items-center justify-center h-96">
+        <div className="text-center">
+          <p className="text-gray-600 font-medium">Unable to load client data</p>
+        </div>
+      </div>
+    )
+  }
+
   // Real manufacturing KPI data
   const kpis = [
     {
@@ -101,7 +111,7 @@ export function DashboardPage() {
             Dashboard
           </h1>
           <p className="text-gray-600 text-sm md:text-base mt-1">
-            {client?.name} • {client?.tier.charAt(0).toUpperCase() + client?.tier.slice(1)} Plan
+            {client.name} • {client.tier.charAt(0).toUpperCase() + client.tier.slice(1)} Plan
           </p>
         </div>
         <div className="text-sm text-gray-500">
@@ -235,8 +245,8 @@ export function DashboardPage() {
         <div>
           <h3 className="font-semibold text-blue-900 mb-1">Pro Tip</h3>
           <p className="text-sm text-blue-800">
-            You have <span className="font-medium">{client?.active_modules.length} active modules</span> in your {client?.tier.toUpperCase()} plan. 
-            {client?.active_modules.length === 2 && ' Upgrade to unlock inventory and grievance management.'}
+            You have <span className="font-medium">{client.active_modules.length} active modules</span> in your {client.tier.toUpperCase()} plan. 
+            {client.active_modules.length === 2 && ' Upgrade to unlock inventory and grievance management.'}
           </p>
         </div>
       </div>
