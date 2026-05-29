@@ -3,22 +3,30 @@ import type { Inquiry, Order, OrderStatusUpdate, Client } from '../types'
 
 // CLIENTS
 export async function getCurrentClient() {
-  const { data } = await supabase.auth.getSession()
-  const user = data?.session?.user
-  
-  if (!user) return null
+  try {
+    const { data } = await supabase.auth.getSession()
+    const user = data?.session?.user
+    
+    if (!user) {
+      console.log('No authenticated user')
+      return null
+    }
 
-  const { data: client, error } = await supabase
-    .from('clients')
-    .select('*')
-    .eq('id', user.id)
-    .single()
-  
-  if (error) {
-    console.error('Error fetching client:', error)
+    const { data: client, error } = await supabase
+      .from('clients')
+      .select('*')
+      .eq('id', user.id)
+      .single()
+    
+    if (error) {
+      console.error('Error fetching client:', error)
+      return null
+    }
+    return client as Client
+  } catch (error) {
+    console.error('getCurrentClient error:', error)
     return null
   }
-  return client as Client
 }
 
 // INQUIRIES
