@@ -1,5 +1,5 @@
-import { Routes, Route, Navigate, useNavigate, useState } from 'react-router-dom'
-import { useEffect } from 'react'
+import { Routes, Route, Navigate, useNavigate } from 'react-router-dom'
+import { useEffect, useState } from 'react'
 import { supabase } from './lib/supabase'
 import { getCurrentUser, signOut } from './lib/api'
 import { LoginPage } from './pages/Login'
