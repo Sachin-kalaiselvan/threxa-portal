@@ -49,21 +49,13 @@ export function LoginPage() {
           {/* Logo Section */}
           <div className="text-center mb-8">
             <div className="flex justify-center mb-4">
-              <div className="relative">
-                {/* Logo Circle */}
-                <div className="w-20 h-20 bg-gradient-to-br from-purple-500 via-blue-500 to-purple-600 rounded-full flex items-center justify-center shadow-lg shadow-purple-500/50">
-                  <span className="text-4xl">⚡</span>
-                </div>
-                {/* Accent dot */}
-                <div className="absolute bottom-1 right-1 w-3 h-3 bg-purple-300 rounded-full"></div>
-              </div>
+              <img 
+                src="/threxa-logo.png" 
+                alt="Threxa" 
+                className="h-24 object-contain"
+              />
             </div>
-            
-            <h1 className="text-4xl font-bold bg-gradient-to-r from-purple-400 via-blue-400 to-purple-400 bg-clip-text text-transparent mb-2">
-              THREXA
-            </h1>
-            <p className="text-slate-300 text-sm font-medium tracking-widest">BEYOND LIMITS</p>
-            <p className="text-slate-400 text-xs mt-2">Client Operations Portal</p>
+            <p className="text-slate-300 text-sm font-medium tracking-widest">CLIENT PORTAL</p>
           </div>
 
           {/* Form */}
